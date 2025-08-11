@@ -1,0 +1,16 @@
+/* Place your CSS styles in this file */
+
+h1 {
+    text-align: center;
+    font-family: "Source Sans Pro", sans-serif;
+    font-weight: normal;
+}
+
+.widget_view {
+  z-index: 99 !important;
+  position: unset !important;
+}
+
+.widget_view .pl-review-card{
+  display: none !important;
+}

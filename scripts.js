@@ -1,0 +1,314 @@
+// import { getWidgetDetails } from "./widgetFunctions";
+// import { APP_URL } from "../lib/constants";
+
+let APP_URL = "http://localhost:3000/"
+let API_URL="https://apib.propel.ly/v1.0/"
+
+ const getWidgetDetails = async (widgetId) => {
+  console.log("hello")
+  try {
+    // const response = await fetch(`${API_URL}widget/${widgetId}`);
+
+    // if (!response.ok) {
+    //   return false;
+    // }
+
+    // const data = await response.json();
+
+    // if (!data) {
+    //   return false;
+    // }
+
+    // const totalRecords = data?.result?.data?.pagination?.records?.total;
+    // if (totalRecords <= 0) {
+    //   return false;
+    // }
+
+    return {
+    "result": 
+  {
+    "success": true,
+    "data": {
+        "widgets": [
+            {
+                "id": "wXz1d66a",
+                "name": "test-8-11-a",
+                "domain_name": "https://akashtest.w3spaces.com",
+                "details": {
+                    "css": {
+                        "mobile": "",
+                        "desktop": ""
+                    },
+                    "type": "floating",
+                    "layout": "floating",
+                    "container_id": "r8zXk8ox-wXz1d66a",
+                    "layout_style": "left",
+                    "google_url_handle": null
+                },
+                "rating_filter": {
+                    "value": "3",
+                    "symbol": ">="
+                },
+                "order_filter": "desc",
+                "exclude_non_text_reviews": false,
+                "show_recent_popup": false,
+                "show_branding": false,
+                "include_feedback": false,
+                "review_sources": [
+                    {
+                        "reviewsource_id": "5n5RJ9Xv",
+                        "platform": "feedback",
+                        "logo": "https://apicdnb.propel.ly/storage/media/logos/platforms/propel-very-small-logo.png",
+                        "url": "http://localhost:3010",
+                        "average_rating": 0,
+                        "review_count": 0,
+                        "details": {
+                            "account_id": "http://localhost:3010"
+                        }
+                    },
+                    {
+                        "reviewsource_id": "pyMJ6Z0P",
+                        "platform": "googlemaps",
+                        "logo": "https://apicdnb.propel.ly/storage/media/logos/platforms/google.png",
+                        "url": "https://maps.google.com/?cid=8126559181874655034&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAAYBCAA",
+                        "average_rating": 4,
+                        "review_count": 2,
+                        "details": {
+                            "name": "Ajay Auto Center",
+                            "account_id": "ChIJE6QhhaNP4DsROu_TAYVWx3A",
+                            "auxiliary_details": {
+                                "id": "ChIJE6QhhaNP4DsROu_TAYVWx3A",
+                                "url": "https://maps.google.com/?cid=8126559181874655034&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAAYBCAA",
+                                "name": "Ajay Auto Center",
+                                "rating": {
+                                    "count": 2,
+                                    "average": 4
+                                },
+                                "address": {
+                                    "city": "Surat",
+                                    "state": "Gujarat",
+                                    "address": "shop 1, Varachha Main Rd, near railway station, Khand Bazar, Patel Nagar, Surat, Gujarat 395006, India",
+                                    "country": "India",
+                                    "zipcode": "395006",
+                                    "location": {
+                                        "lat": 21.2071368,
+                                        "lng": 72.8419358
+                                    }
+                                },
+                                "website_url": null
+                            }
+                        }
+                    }
+                ],
+                "created_at": "2025-08-11T11:34:15",
+                "updated_at": "2025-08-11T11:42:26"
+            }
+        ]
+    }
+}
+};
+  } catch (error) {
+    return false;
+  }
+};
+
+class Widget {
+  /*Get all the params from the script tag and assign to the class variable*/
+  constructor() {
+    this.companyId = document.currentScript.getAttribute("company-id");
+    this.widgetId = document.currentScript.getAttribute("widget-id");
+    this.init();
+  }
+  async init() {
+    try {
+      if (!this.widgetId || this.widgetId === null || this.widgetId === undefined) {
+        console.log(" 106 atlas version 1.0.38");
+
+        document.addEventListener("DOMContentLoaded", async () => {       
+
+          let googleReviewApps = document.querySelectorAll("div.rs-app");
+          console.log(" 108 googleReviewApps ", googleReviewApps);
+
+          if (googleReviewApps.length) {
+            let selecterApp = googleReviewApps[0];
+            console.log(" 110 selecterApp ", selecterApp);
+
+            let appId = selecterApp.getAttribute("app-id");
+            console.log(" 113 appId ", appId);
+
+            let companyId = selecterApp.getAttribute("company-id");
+            console.log(" 116 companyid ", companyId);
+
+            let val = await getWidgetDetails(appId);
+            let { type, layout_style, layout, container_id, css } = val?.result?.data?.widgets[0]?.details;
+            let showPopup = val?.result?.data?.widgets[0]?.show_recent_popup;
+
+            let containerBody = document.createElement("div");
+            containerBody.setAttribute("class", container_id);
+            const elements = document.getElementsByClassName(container_id);
+            if (elements.length == 0) {
+              document.body.append(containerBody);
+              let script = document.createElement("script");
+              let popupscript = document.createElement("script");
+
+              switch (type) {
+                case "floating":
+                  if (layout_style == "top") {
+                    script.src = APP_URL + "widgets/horizontal_widget.js";
+                    script.setAttribute("position", layout_style);
+                  }
+                  if (layout_style == "bottom") {
+                    script.src = APP_URL + "widgets/horizontal_widget.js";
+                    script.setAttribute("position", layout_style);
+                  }
+                  if (layout_style == "left") {
+                    script.src = APP_URL + "widgets/floating_bar.js";
+                    script.setAttribute("position", layout_style);
+                  }
+                  if (layout_style == "right") {
+                    script.src = APP_URL + "widgets/floating_bar.js";
+                    script.setAttribute("position", layout_style);
+                  }
+                  break;
+                case "badge":
+                  if (layout_style == "badge") {
+                    script.src = APP_URL + "widgets/badge.js";
+                  }
+                  if (layout_style == "badge_monochromatic_fill") {
+                    script.src = APP_URL + "widgets/badge_monochromatic_fill.js";
+                  }
+                  if (css == "display-block" && type == "badge") {
+                    script.src = APP_URL + "widgets/badge_monochromatic_fill.js";
+                    layout_style = "badge_monochromatic_fill";
+                    container_id = `${companyId}-${appId}`;
+                  }
+                  break;
+                case "button":
+                  script.src = APP_URL + "widgets/button.js";
+                  break;
+                case "slider":
+                  script.src = APP_URL + "widgets/slider_widget.js";
+                  break;
+                case "carousel":
+                  script.src = APP_URL + "widgets/carousel.js";
+                  break;
+              }
+
+              if (!!showPopup) {
+                popupscript.src = APP_URL + "widgets/bottom_widget.js";
+                popupscript.setAttribute("company-id", this.companyId);
+                popupscript.setAttribute("layout-style", layout_style);
+                popupscript.setAttribute("container-id", container_id);
+                popupscript.setAttribute("widget-id", this.widgetId);
+                if (css?.desktop) {
+                  popupscript.setAttribute("field-desktop-css", css?.desktop);
+                  popupscript.setAttribute("field-mobile-css", css?.mobile);
+                }
+                popupscript.async = true;
+              }
+
+              script.setAttribute("company-id", companyId);
+              script.setAttribute("layout-style", layout_style);
+              script.setAttribute("container-id", container_id);
+              script.setAttribute("widget-id", appId);
+              if (css?.desktop) {
+                script.setAttribute("field-desktop-css", css.desktop);
+                script.setAttribute("field-mobile-css", css.mobile);
+              }
+              script.async = true;
+
+              document.body.appendChild(script);
+              document.body.appendChild(popupscript);
+            }
+          }
+        });
+      } else {
+        if (this.widgetId || this.widgetId !== null || this.widgetId !== undefined) {
+          console.log("widget version 1.0.38");
+          let val = await getWidgetDetails(this.widgetId);
+          console.log('val?.result?.data ', val?.result?.data)
+          let { type, layout_style, layout, container_id, css } = val?.result?.data?.widgets[0]?.details;
+          let showPopup = val?.result?.data?.widgets[0]?.show_recent_popup;
+          let script = document.createElement("script");
+          let popupscript = document.createElement("script");
+          console.log("before switch", type);
+
+          switch (type) {
+            case "floating":
+              if (layout_style == "top") {
+                script.src = APP_URL + "widgets/horizontal_widget.js";
+                script.setAttribute("position", layout_style);
+              }
+              if (layout_style == "bottom") {
+                script.src = APP_URL + "widgets/horizontal_widget.js";
+                script.setAttribute("position", layout_style);
+              }
+              if (layout_style == "left") {
+                script.src = APP_URL + "widgets/floating_bar.js";
+                script.setAttribute("position", layout_style);
+              }
+              if (layout_style == "right") {
+                script.src = APP_URL + "widgets/floating_bar.js";
+                script.setAttribute("position", layout_style);
+              }
+              break;
+            case "badge":
+              if (layout_style == "badge") {
+                script.src = APP_URL + "widgets/badge.js";
+              }
+              if (layout_style == "badge_monochromatic_fill") {
+                script.src = APP_URL + "widgets/badge_monochromatic_fill.js";
+              }
+              if (css == "display-block" && type == "badge") {
+                script.src = APP_URL + "widgets/badge_monochromatic_fill.js";
+                layout_style = "badge_monochromatic_fill";
+                container_id = `${this.companyId}-${this.widgetId}`;
+              }
+              break;
+            case "button":
+              script.src = APP_URL + "widgets/button.js";
+              break;
+            case "slider":
+              script.src = APP_URL + "widgets/slider_widget.js";
+              break;
+            case "carousel":
+              console.log("inside case carousel");
+
+              script.src = APP_URL + "widgets/carousel.js";
+              break;
+          }
+
+          if (!!showPopup) {
+            popupscript.src = APP_URL + "widgets/bottom_widget.js";
+            popupscript.setAttribute("company-id", this.companyId);
+            popupscript.setAttribute("layout-style", layout_style);
+            popupscript.setAttribute("container-id", container_id);
+            popupscript.setAttribute("widget-id", this.widgetId);
+            if (css?.desktop) {
+              popupscript.setAttribute("field-desktop-css", css?.desktop);
+              popupscript.setAttribute("field-mobile-css", css?.mobile);
+            }
+            popupscript.async = true;
+          }
+
+          script.setAttribute("company-id", this.companyId);
+          script.setAttribute("layout-style", layout_style);
+          script.setAttribute("container-id", container_id);
+          script.setAttribute("widget-id", this.widgetId);
+          if (css?.desktop) {
+            script.setAttribute("field-desktop-css", css?.desktop);
+            script.setAttribute("field-mobile-css", css?.mobile);
+          }
+          script.async = true;
+
+          document.body.appendChild(script);
+          document.body.appendChild(popupscript);
+        }
+      }
+    } catch (err) {
+      console.log("err", err);
+    }
+  }
+}
+
+new Widget();
