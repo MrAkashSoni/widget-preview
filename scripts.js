@@ -26,90 +26,89 @@ let API_URL="https://apib.propel.ly/v1.0/"
 
     console.log("data", data);
 
-    return data;
+    // return data;
     return {
-    "result": 
-  {
-    "success": true,
-    "data": {
-        "widgets": [
-            {
-                "id": "wXz1d66a",
-                "name": "test-8-11-a",
-                "domain_name": "https://akashtest.w3spaces.com",
-                "details": {
-                    "css": {
-                        "mobile": "",
-                        "desktop": ""
+      result:{
+        "success": true,
+        "data": {
+            "widgets": [
+                {
+                    "id": "alQYWdrK",
+                    "name": "test-8-12",
+                    "domain_name": "http://localhost:3010",
+                    "details": {
+                        "css": {
+                            "mobile": "position:fixed,top:10px,left:10px,z-index:99",
+                            "desktop": "position:fixed,top:30%,right:10px,transform:translateY(-50%),z-index:99"
+                        },
+                        "type": "floating",
+                        "layout": "floating",
+                        "container_id": "E9vWGOmx-alQYWdrK",
+                        "layout_style": "left",
+                        "google_url_handle": null
                     },
-                    "type": "floating",
-                    "layout": "floating",
-                    "container_id": "r8zXk8ox-wXz1d66a",
-                    "layout_style": "left",
-                    "google_url_handle": null
-                },
-                "rating_filter": {
-                    "value": "3",
-                    "symbol": ">="
-                },
-                "order_filter": "desc",
-                "exclude_non_text_reviews": false,
-                "show_recent_popup": false,
-                "show_branding": false,
-                "include_feedback": false,
-                "review_sources": [
-                    {
-                        "reviewsource_id": "5n5RJ9Xv",
-                        "platform": "feedback",
-                        "logo": "https://apicdnb.propel.ly/storage/media/logos/platforms/propel-very-small-logo.png",
-                        "url": "http://localhost:3010",
-                        "average_rating": 0,
-                        "review_count": 0,
-                        "details": {
-                            "account_id": "http://localhost:3010"
-                        }
+                    "rating_filter": {
+                        "value": "3",
+                        "symbol": ">="
                     },
-                    {
-                        "reviewsource_id": "pyMJ6Z0P",
-                        "platform": "googlemaps",
-                        "logo": "https://apicdnb.propel.ly/storage/media/logos/platforms/google.png",
-                        "url": "https://maps.google.com/?cid=8126559181874655034&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAAYBCAA",
-                        "average_rating": 4,
-                        "review_count": 2,
-                        "details": {
-                            "name": "Ajay Auto Center",
-                            "account_id": "ChIJE6QhhaNP4DsROu_TAYVWx3A",
-                            "auxiliary_details": {
-                                "id": "ChIJE6QhhaNP4DsROu_TAYVWx3A",
-                                "url": "https://maps.google.com/?cid=8126559181874655034&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAAYBCAA",
-                                "name": "Ajay Auto Center",
-                                "rating": {
-                                    "count": 2,
-                                    "average": 4
-                                },
-                                "address": {
-                                    "city": "Surat",
-                                    "state": "Gujarat",
-                                    "address": "shop 1, Varachha Main Rd, near railway station, Khand Bazar, Patel Nagar, Surat, Gujarat 395006, India",
-                                    "country": "India",
-                                    "zipcode": "395006",
-                                    "location": {
-                                        "lat": 21.2071368,
-                                        "lng": 72.8419358
-                                    }
-                                },
-                                "website_url": null
+                    "order_filter": "desc",
+                    "exclude_non_text_reviews": false,
+                    "show_recent_popup": false,
+                    "show_branding": false,
+                    "include_feedback": false,
+                    "review_sources": [
+                        {
+                            "reviewsource_id": "dXELOan1",
+                            "platform": "feedback",
+                            "logo": "https://apicdnb.propel.ly/storage/media/logos/platforms/propel-very-small-logo.png",
+                            "url": "http://localhost:3010",
+                            "average_rating": 0,
+                            "review_count": 0,
+                            "details": {
+                                "account_id": "http://localhost:3010"
+                            }
+                        },
+                        {
+                            "reviewsource_id": "B0voqEn6",
+                            "platform": "googlemaps",
+                            "logo": "https://apicdnb.propel.ly/storage/media/logos/platforms/google.png",
+                            "url": "https://maps.google.com/?cid=4555462783736548192&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAAYBCAA",
+                            "average_rating": 5,
+                            "review_count": 1,
+                            "details": {
+                                "name": "NISAR AUTO SERVICE CENTER",
+                                "account_id": "ChIJlxjDEI1O4DsRYAshFERBOD8",
+                                "auxiliary_details": {
+                                    "id": "ChIJlxjDEI1O4DsRYAshFERBOD8",
+                                    "url": "https://maps.google.com/?cid=4555462783736548192&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAAYBCAA",
+                                    "name": "NISAR AUTO SERVICE CENTER",
+                                    "rating": {
+                                        "count": 1,
+                                        "average": 5
+                                    },
+                                    "address": {
+                                        "city": "Surat",
+                                        "state": "Gujarat",
+                                        "address": "Shop No 1, Hodi Bungalow, Smc Shool, near Hodi Bnglow, Rampura, Katargam Darwaja, Surat, Gujarat 395003, India",
+                                        "country": "India",
+                                        "zipcode": "395003",
+                                        "location": {
+                                            "lat": 21.2088692,
+                                            "lng": 72.8260178
+                                        }
+                                    },
+                                    "website_url": null
+                                }
                             }
                         }
-                    }
-                ],
-                "created_at": "2025-08-11T11:34:15",
-                "updated_at": "2025-08-11T11:42:26"
-            }
-        ]
-    }
-}
-};
+                    ],
+                    "created_at": "2025-08-12T05:51:47",
+                    "updated_at": "2025-08-12T06:35:44"
+                }
+            ]
+        }
+      }
+    };
   } catch (error) {
     return false;
   }
