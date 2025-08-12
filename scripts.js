@@ -24,6 +24,9 @@ let API_URL="https://apib.propel.ly/v1.0/"
       return false;
     }
 
+    console.log("data", data);
+
+    return data;
     return {
     "result": 
   {
