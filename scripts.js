@@ -7,107 +7,108 @@ let API_URL="https://apib.propel.ly/v1.0/"
  const getWidgetDetails = async (widgetId) => {
   console.log("hello")
   try {
-    const response = await fetch(`${API_URL}widget/${widgetId}`);
+    // const response = await fetch(`${API_URL}widget/${widgetId}`);
 
-    if (!response.ok) {
-      return false;
-    }
+    // if (!response.ok) {
+    //   return false;
+    // }
 
-    const data = await response.json();
+    // const data = await response.json();
 
-    if (!data) {
-      return false;
-    }
+    // if (!data) {
+    //   return false;
+    // }
 
-    const totalRecords = data?.result?.data?.pagination?.records?.total;
-    if (totalRecords <= 0) {
-      return false;
-    }
+    // const totalRecords = data?.result?.data?.pagination?.records?.total;
+    // if (totalRecords <= 0) {
+    //   return false;
+    // }
 
-    console.log("data", data);
+    // console.log("data", data);
 
-    return data;
+    // return data;
     return {
       result:{
-        "success": true,
-        "data": {
-            "widgets": [
-                {
-                    "id": "alQYWdrK",
-                    "name": "test-8-12",
-                    "domain_name": "http://localhost:3010",
-                    "details": {
-                        "css": {
-                            "mobile": "position:fixed,top:10px,left:10px,z-index:99",
-                            "desktop": "position:fixed,top:30%,right:10px,transform:translateY(-50%),z-index:99"
-                        },
-                        "type": "floating",
-                        "layout": "floating",
-                        "container_id": "E9vWGOmx-alQYWdrK",
-                        "layout_style": "left",
-                        "google_url_handle": null
+       
+    "success": true,
+    "data": {
+        "widgets": [
+            {
+                "id": "a54oZnML",
+                "name": "test-18-8",
+                "domain_name": "http://localhost:3010",
+                "details": {
+                    "css": {
+                        "mobile": "position:fixed,left:20px,top:60%,transform:translateY(-50%),z-index:99",
+                        "desktop": "position:fixed,left:20px,top:30%,transform:translateY(-50%),z-index:99"
                     },
-                    "rating_filter": {
-                        "value": "3",
-                        "symbol": ">="
+                    "type": "floating",
+                    "layout": "floating",
+                    "container_id": "E9vWGOmx-a54oZnML",
+                    "layout_style": "left",
+                    "google_url_handle": null
+                },
+                "rating_filter": {
+                    "value": "3",
+                    "symbol": ">="
+                },
+                "order_filter": "desc",
+                "exclude_non_text_reviews": false,
+                "show_recent_popup": false,
+                "show_branding": false,
+                "include_feedback": false,
+                "review_sources": [
+                    {
+                        "reviewsource_id": "dXELOan1",
+                        "platform": "feedback",
+                        "logo": "https://apicdnb.propel.ly/storage/media/logos/platforms/propel-very-small-logo.png",
+                        "url": "http://localhost:3010",
+                        "average_rating": 0,
+                        "review_count": 0,
+                        "details": {
+                            "account_id": "http://localhost:3010"
+                        }
                     },
-                    "order_filter": "desc",
-                    "exclude_non_text_reviews": false,
-                    "show_recent_popup": false,
-                    "show_branding": false,
-                    "include_feedback": false,
-                    "review_sources": [
-                        {
-                            "reviewsource_id": "dXELOan1",
-                            "platform": "feedback",
-                            "logo": "https://apicdnb.propel.ly/storage/media/logos/platforms/propel-very-small-logo.png",
-                            "url": "http://localhost:3010",
-                            "average_rating": 0,
-                            "review_count": 0,
-                            "details": {
-                                "account_id": "http://localhost:3010"
-                            }
-                        },
-                        {
-                            "reviewsource_id": "B0voqEn6",
-                            "platform": "googlemaps",
-                            "logo": "https://apicdnb.propel.ly/storage/media/logos/platforms/google.png",
-                            "url": "https://maps.google.com/?cid=4555462783736548192&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAAYBCAA",
-                            "average_rating": 5,
-                            "review_count": 1,
-                            "details": {
-                                "name": "NISAR AUTO SERVICE CENTER",
-                                "account_id": "ChIJlxjDEI1O4DsRYAshFERBOD8",
-                                "auxiliary_details": {
-                                    "id": "ChIJlxjDEI1O4DsRYAshFERBOD8",
-                                    "url": "https://maps.google.com/?cid=4555462783736548192&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAAYBCAA",
-                                    "name": "NISAR AUTO SERVICE CENTER",
-                                    "rating": {
-                                        "count": 1,
-                                        "average": 5
-                                    },
-                                    "address": {
-                                        "city": "Surat",
-                                        "state": "Gujarat",
-                                        "address": "Shop No 1, Hodi Bungalow, Smc Shool, near Hodi Bnglow, Rampura, Katargam Darwaja, Surat, Gujarat 395003, India",
-                                        "country": "India",
-                                        "zipcode": "395003",
-                                        "location": {
-                                            "lat": 21.2088692,
-                                            "lng": 72.8260178
-                                        }
-                                    },
-                                    "website_url": null
-                                }
+                    {
+                        "reviewsource_id": "BX4KPenQ",
+                        "platform": "googlemaps",
+                        "logo": "https://apicdnb.propel.ly/storage/media/logos/platforms/google.png",
+                        "url": "https://maps.google.com/?cid=2246516254323608697&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAAYBCAA",
+                        "average_rating": 1,
+                        "review_count": 1,
+                        "details": {
+                            "name": "Best Car Service In Surat",
+                            "account_id": "ChIJbencXxBP4DsReYwZeaE6LR8",
+                            "auxiliary_details": {
+                                "id": "ChIJbencXxBP4DsReYwZeaE6LR8",
+                                "url": "https://maps.google.com/?cid=2246516254323608697&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAAYBCAA",
+                                "name": "Best Car Service In Surat",
+                                "rating": {
+                                    "count": 1,
+                                    "average": 1
+                                },
+                                "address": {
+                                    "city": "Surat",
+                                    "state": "Gujarat",
+                                    "address": "New Pushpakunj Society, Katargam, Surat, Gujarat 395004, India",
+                                    "country": "India",
+                                    "zipcode": "395004",
+                                    "location": {
+                                        "lat": 21.2212192,
+                                        "lng": 72.8382494
+                                    }
+                                },
+                                "website_url": null
                             }
                         }
-                    ],
-                    "created_at": "2025-08-12T05:51:47",
-                    "updated_at": "2025-08-12T06:35:44"
-                }
-            ]
-        }
-      }
+                    }
+                ],
+                "created_at": "2025-08-18T05:53:18",
+                "updated_at": "2025-08-18T06:50:18"
+            }
+        ]
+    }
+}
     };
   } catch (error) {
     return false;
