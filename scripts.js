@@ -5,7 +5,7 @@ let APP_URL = "http://localhost:3000/"
 let API_URL="https://apib.propel.ly/v1.0/"
 
  const getWidgetDetails = async (widgetId) => {
-  console.log("hello")
+  console.log("hello 123")
   try {
     // const response = await fetch(`${API_URL}widget/${widgetId}`);
 
