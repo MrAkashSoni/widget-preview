@@ -1,8 +1,8 @@
 // import { getWidgetDetails } from "./widgetFunctions";
 // import { APP_URL } from "../lib/constants";
 
-let APP_URL = "http://localhost:3000/"
-// let APP_URL = "https://cdnb.propel.ly/"
+// let APP_URL = "http://localhost:3000/"
+let APP_URL = "https://cdnb.propel.ly/"
 let API_URL="https://apib.propel.ly/v1.0/"
 
 const getWidgetDetails = async (widgetId) => {
