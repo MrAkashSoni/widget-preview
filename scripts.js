@@ -5,8 +5,10 @@
 let APP_URL = "https://cdnb.propel.ly/"
 let API_URL="https://apib.propel.ly/v1.0/"
 
+console.log('v1.0')
+
 const getWidgetDetails = async (widgetId) => {
-  console.log('hello 123');
+  
   try {
     const response = await fetch(`${API_URL}widget/${widgetId}`);
 
