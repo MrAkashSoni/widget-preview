@@ -2,31 +2,32 @@
 // import { APP_URL } from "../lib/constants";
 
 let APP_URL = "http://localhost:3000/"
+// let APP_URL = "https://cdnb.propel.ly/"
 let API_URL="https://apib.propel.ly/v1.0/"
 
  const getWidgetDetails = async (widgetId) => {
   console.log("hello 123")
   try {
-    // const response = await fetch(`${API_URL}widget/${widgetId}`);
+    const response = await fetch(`${API_URL}widget/${widgetId}`);
 
-    // if (!response.ok) {
-    //   return false;
-    // }
+    if (!response.ok) {
+      return false;
+    }
 
-    // const data = await response.json();
+    const data = await response.json();
 
-    // if (!data) {
-    //   return false;
-    // }
+    if (!data) {
+      return false;
+    }
 
-    // const totalRecords = data?.result?.data?.pagination?.records?.total;
-    // if (totalRecords <= 0) {
-    //   return false;
-    // }
+    const totalRecords = data?.result?.data?.pagination?.records?.total;
+    if (totalRecords <= 0) {
+      return false;
+    }
 
-    // console.log("data", data);
+    console.log("data", data);
 
-    // return data;
+    return data;
     return {
       result:{
        
